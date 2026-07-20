@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bjcywmbje6s7g"]
+
+[ext_resource type="Script" path="res://scripts/location_panel.gd" id="1_lp"]
+
+[node name="LocationPanel" type="Control" unique_id=1655514496]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lp")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=17608710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Panel" type="Panel" parent="." unique_id=1122296286]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -240.0
+offset_right = 200.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=590133101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1972616607]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "选择目的地"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer" unique_id=2060603489]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "当前：平原 | 已停留：1 天"
+horizontal_alignment = 1
+
+[node name="LocationGrid" type="GridContainer" parent="Panel/VBoxContainer" unique_id=2019263511]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="PlainButton" type="Button" parent="Panel/VBoxContainer/LocationGrid" unique_id=200924748]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "平原"
+
+[node name="ForestButton" type="Button" parent="Panel/VBoxContainer/LocationGrid" unique_id=1245981751]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "森林"
+
+[node name="BasinButton" type="Button" parent="Panel/VBoxContainer/LocationGrid" unique_id=851817249]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "盆地"
+
+[node name="ValleyButton" type="Button" parent="Panel/VBoxContainer/LocationGrid" unique_id=662314739]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "山谷"
+
+[node name="GlacierButton" type="Button" parent="Panel/VBoxContainer/LocationGrid" unique_id=1833487548]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "冰川"
+
+[node name="ShelterButton" type="Button" parent="Panel/VBoxContainer/LocationGrid" unique_id=2016477216]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "避难所"
+
+[node name="Spacer" type="Control" parent="Panel/VBoxContainer" unique_id=336722835]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=589335711]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="Panel/VBoxContainer/ButtonRow" unique_id=2089259993]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "取消"
+
+[node name="TravelButton" type="Button" parent="Panel/VBoxContainer/ButtonRow" unique_id=869102460]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "选择目的地"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonRow/CancelButton" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonRow/TravelButton" to="." method="_on_travel_pressed"]

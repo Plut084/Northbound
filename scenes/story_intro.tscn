@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dk7lcu34qc05l"]
+
+[ext_resource type="Script" uid="uid://cutuvk7t476h6" path="res://scripts/story_intro.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://e8j5dkum3o8h" path="res://asserts/background_intro.png" id="2_bg"]
+
+[node name="StoryIntro" type="Control" unique_id=397692632]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="BackgroundIntro" type="Sprite2D" parent="." unique_id=385299103]
+position = Vector2(963, 557.5)
+scale = Vector2(1.6979169, 1.7731482)
+texture = ExtResource("2_bg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=263380950]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -120.0
+offset_right = 240.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="NarrationLabel" type="Label" parent="VBoxContainer" unique_id=1433394532]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "那是一个令人印象深刻的夜晚，全球在一夜之间蒙上了冰雪...
+你必须带领你的队伍寻找新的庇护所。
+那是二十天的路程，避难所所在地成了你们心中的希望，"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ConfirmButton" type="Button" parent="VBoxContainer" unique_id=240769269]
+layout_mode = 2
+text = "我们会活下去的"
+
+[connection signal="pressed" from="VBoxContainer/ConfirmButton" to="." method="_on_confirm_pressed"]

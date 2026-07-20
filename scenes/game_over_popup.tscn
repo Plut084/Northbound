@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c5u611hu4x1fm"]
+
+[ext_resource type="Script" uid="uid://dwr0k8c0cu7tj" path="res://scripts/game_over_popup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cvf2ywrn0sojq" path="res://asserts/background_failure.png" id="2_bg"]
+
+[node name="GameOverPopup" type="Control" unique_id=1507327105]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_script")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=376983160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.7)
+
+[node name="BackgroundFailure" type="Sprite2D" parent="Overlay" unique_id=1576367708]
+position = Vector2(957, 560.5)
+scale = Vector2(1.7152779, 1.8132715)
+texture = ExtResource("2_bg")
+
+[node name="Panel" type="Panel" parent="." unique_id=19778523]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1679416641]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=239792566]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "你输了..."
+horizontal_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1916047346]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "你知道你做到了最好。
+但是谁能违抗命运呢？
+你写下这段日记，
+希望不被世界遗忘。"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1699927654]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer/ButtonRow" unique_id=46831954]
+layout_mode = 2
+text = "重新开始"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer/ButtonRow" unique_id=1379623797]
+layout_mode = 2
+text = "返回主菜单"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonRow/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonRow/QuitButton" to="." method="_on_quit_pressed"]

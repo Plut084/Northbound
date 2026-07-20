@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://pdpcs1uv4wet"]
+
+[ext_resource type="Script" uid="uid://d2k7ukyq0ttse" path="res://scripts/team_panel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cufpjm1knbfvk" path="res://ui/ui_framework.png" id="2_uw5ab"]
+[ext_resource type="Texture2D" uid="uid://bfk2pjrrru16s" path="res://ui/ui_title.png" id="3_7hrat"]
+
+[node name="TeamPanel" type="Control" unique_id=848142173]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_script")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=206622857]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="Panel" parent="." unique_id=143541988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -200.0
+offset_right = 260.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UiFramework" type="Sprite2D" parent="Panel" unique_id=113799746]
+position = Vector2(258, 223.62503)
+scale = Vector2(1.4041449, 1.9314368)
+texture = ExtResource("2_uw5ab")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1467041038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -279.0
+offset_top = -87.0
+offset_right = 311.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="UiTitle" type="Sprite2D" parent="Panel/VBoxContainer" unique_id=243875045]
+position = Vector2(567, 31.999992)
+scale = Vector2(0.48944142, 0.9831605)
+texture = ExtResource("3_7hrat")
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=2034730152]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "队伍总览"
+horizontal_alignment = 1
+
+[node name="PeopleCount" type="Label" parent="Panel/VBoxContainer" unique_id=1234631761]
+layout_mode = 2
+text = "人数：6"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=696440570]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer" unique_id=910752721]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MembersContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer" unique_id=1675975606]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer" unique_id=1430772927]
+layout_mode = 2
+text = "关闭"
+
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_pressed"]

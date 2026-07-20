@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vce5syp2r8m"]
+
+[ext_resource type="Script" path="res://scripts/day_panel.gd" id="1_day_panel"]
+
+[node name="DayPanel" type="Label"]
+script = ExtResource("1_day_panel")
+text = "第 1 天"
+horizontal_alignment = 0

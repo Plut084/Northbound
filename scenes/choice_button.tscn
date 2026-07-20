@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c7h8pai0c1e2b"]
+
+[node name="ChoiceButton" type="Button"]
+text = "选择"
+size_flags_horizontal = 4

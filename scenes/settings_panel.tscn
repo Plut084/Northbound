@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dkrlhu54ac55e"]
+
+[ext_resource type="Script" uid="uid://dgvxkgyj6badq" path="res://scripts/settings_panel.gd" id="1_script"]
+
+[node name="SettingsPanel" type="Control" unique_id=261625405]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_script")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1556783364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="Panel" parent="." unique_id=1937304670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -140.0
+offset_right = 160.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1039999538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1221913204]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "设置"
+horizontal_alignment = 1
+
+[node name="VolumeLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1512847337]
+unique_name_in_owner = true
+layout_mode = 2
+text = "音量：100%"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer" unique_id=1077740572]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+
+[node name="FullscreenButton" type="Button" parent="Panel/VBoxContainer" unique_id=435881991]
+unique_name_in_owner = true
+layout_mode = 2
+text = "全屏：[OFF]"
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer" unique_id=876502766]
+layout_mode = 2
+text = "返回"
+
+[connection signal="value_changed" from="Panel/VBoxContainer/VolumeSlider" to="." method="_on_volume_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/FullscreenButton" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_pressed"]

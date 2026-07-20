@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://be2fqvwc4ipu3"]
+
+[ext_resource type="Script" uid="uid://bonuvjqkvmbt2" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://vce5syp2r8m" path="res://scenes/day_panel.tscn" id="2_day_panel"]
+[ext_resource type="PackedScene" uid="uid://d1r2e3s4o5u6r" path="res://scenes/resource_panel.tscn" id="3_resource_panel"]
+[ext_resource type="Script" uid="uid://c6porpn6ic5lq" path="res://scripts/event_manager.gd" id="4_event_manager"]
+[ext_resource type="PackedScene" uid="uid://bfh4syqtavudi" path="res://scenes/event_panel.tscn" id="5_event_panel"]
+[ext_resource type="PackedScene" uid="uid://bcuc80unlrxo6" path="res://scenes/info_popup.tscn" id="6_info_popup"]
+[ext_resource type="PackedScene" uid="uid://cwhwep8ru2fb5" path="res://scenes/victory_popup.tscn" id="7_victory_popup"]
+[ext_resource type="PackedScene" uid="uid://mnniw455e47c" path="res://scenes/pause_menu.tscn" id="8_pause_menu"]
+[ext_resource type="Script" uid="uid://bp0606fp4hmi4" path="res://scripts/resource_manager.gd" id="9_resource_manager"]
+[ext_resource type="Script" uid="uid://dc2e51expl87w" path="res://scripts/character_manager.gd" id="10_character_manager"]
+[ext_resource type="Texture2D" uid="uid://c0rle6valdnrd" path="res://asserts/icon_event.png" id="10_pm3ni"]
+[ext_resource type="Script" uid="uid://bjx2ov64eroyb" path="res://scripts/expedition_manager.gd" id="11_expedition_manager"]
+[ext_resource type="PackedScene" uid="uid://dk7lcu34qc05l" path="res://scenes/story_intro.tscn" id="12_story_intro"]
+[ext_resource type="PackedScene" uid="uid://c5u611hu4x1fm" path="res://scenes/game_over_popup.tscn" id="13_game_over"]
+[ext_resource type="PackedScene" uid="uid://cbvcoyxmjqjn2" path="res://scenes/journal_panel.tscn" id="14_journal"]
+[ext_resource type="PackedScene" uid="uid://pdpcs1uv4wet" path="res://scenes/team_panel.tscn" id="15_team"]
+[ext_resource type="PackedScene" uid="uid://d4m5a6p7s8dae" path="res://scenes/map.tscn" id="16_map"]
+[ext_resource type="PackedScene" uid="uid://dkrlhu54ac55e" path="res://scenes/settings_panel.tscn" id="17_settings"]
+[ext_resource type="Texture2D" uid="uid://btnw1ogkqjlvb" path="res://asserts/background_main.png" id="18_bg"]
+[ext_resource type="Texture2D" uid="uid://ctshrtmjogoec" path="res://asserts/icon_journal.png" id="19_journal_icon"]
+[ext_resource type="Texture2D" uid="uid://rjicd4r2tk2m" path="res://asserts/icon_party.png" id="20_party_icon"]
+[ext_resource type="Texture2D" uid="uid://o2y35mrvvp6s" path="res://asserts/icon_map.png" id="21_map_icon"]
+[ext_resource type="Texture2D" uid="uid://bnkqqmph1lv46" path="res://asserts/icon_setting.png" id="22_setting_icon"]
+[ext_resource type="Texture2D" uid="uid://nqoe56i4fdi5" path="res://asserts/effect_snow.png" id="23_snow"]
+[ext_resource type="PackedScene" uid="uid://dtr4v3lpnl001" path="res://scenes/travel.tscn" id="24_travel"]
+
+[node name="Main" type="Control" unique_id=1165189903]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="BackgroundMain" type="Sprite2D" parent="." unique_id=1170388513]
+position = Vector2(964, 563)
+scale = Vector2(1.6979166, 1.7932098)
+texture = ExtResource("18_bg")
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=512306990]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="DayPanel" parent="TopBar" unique_id=341333281 instance=ExtResource("2_day_panel")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResourcePanel" parent="TopBar" unique_id=1722758698 instance=ExtResource("3_resource_panel")]
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="TopBar" unique_id=73192645]
+layout_mode = 2
+text = "菜单"
+
+[node name="EventPanel" parent="." unique_id=42145989 instance=ExtResource("5_event_panel")]
+layout_mode = 1
+offset_top = 44.0
+offset_bottom = -48.0
+
+[node name="BottomBar" type="HBoxContainer" parent="." unique_id=1606949447]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="JournalButton" type="Button" parent="BottomBar" unique_id=1791105327]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "日志"
+icon = ExtResource("19_journal_icon")
+
+[node name="TeamButton" type="Button" parent="BottomBar" unique_id=510217027]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "队伍"
+icon = ExtResource("20_party_icon")
+
+[node name="MapButton" type="Button" parent="BottomBar" unique_id=1957059018]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "地图"
+icon = ExtResource("21_map_icon")
+
+[node name="SettingsButton" type="Button" parent="BottomBar" unique_id=46917623]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "设置"
+icon = ExtResource("22_setting_icon")
+
+[node name="EventNotification" type="Button" parent="BottomBar" unique_id=1126543725]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "事件"
+icon = ExtResource("10_pm3ni")
+expand_icon = true
+
+[node name="NextDayButton" type="Button" parent="BottomBar" unique_id=1613540593]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "下一天"
+
+[node name="InfoPopup" parent="." unique_id=184064412 instance=ExtResource("6_info_popup")]
+layout_mode = 1
+
+[node name="VictoryPopup" parent="." unique_id=1116614113 instance=ExtResource("7_victory_popup")]
+z_index = 100
+layout_mode = 1
+
+[node name="GameOverPopup" parent="." unique_id=986366713 instance=ExtResource("13_game_over")]
+visible = false
+z_index = 100
+layout_mode = 1
+
+[node name="PauseMenu" parent="." unique_id=1422004787 instance=ExtResource("8_pause_menu")]
+layout_mode = 1
+
+[node name="StoryIntro" parent="." unique_id=1517340619 instance=ExtResource("12_story_intro")]
+layout_mode = 1
+
+[node name="Managers" type="Node" parent="." unique_id=2026356066]
+
+[node name="EventManager" type="Node" parent="Managers" unique_id=1021323825]
+script = ExtResource("4_event_manager")
+
+[node name="ResourceManager" type="Node" parent="Managers" unique_id=1808091750]
+script = ExtResource("9_resource_manager")
+
+[node name="CharacterManager" type="Node" parent="Managers" unique_id=217816940]
+script = ExtResource("10_character_manager")
+
+[node name="ExpeditionManager" type="Node" parent="Managers" unique_id=1322379337]
+script = ExtResource("11_expedition_manager")
+
+[node name="Panels" type="Node" parent="." unique_id=167827363]
+
+[node name="JournalPanel" parent="Panels" unique_id=819498353 instance=ExtResource("14_journal")]
+visible = false
+z_index = 20
+
+[node name="TeamPanel" parent="Panels" unique_id=826891269 instance=ExtResource("15_team")]
+
+[node name="Map" parent="Panels" unique_id=1216982147 instance=ExtResource("16_map")]
+visible = false
+
+[node name="SettingsPanel" parent="Panels" unique_id=1034863789 instance=ExtResource("17_settings")]
+visible = false
+
+[node name="TravelPanel" parent="Panels" unique_id=252534127 instance=ExtResource("24_travel")]
+visible = false
+
+[node name="SnowTransition" type="Sprite2D" parent="." unique_id=1630807595]
+visible = false
+z_index = 10
+position = Vector2(-880.99994, 503)
+scale = Vector2(1.546224, 1.4908204)
+texture = ExtResource("23_snow")
+
+[connection signal="pressed" from="TopBar/MenuButton" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="BottomBar/JournalButton" to="." method="_on_journal_pressed"]
+[connection signal="pressed" from="BottomBar/TeamButton" to="." method="_on_team_pressed"]
+[connection signal="pressed" from="BottomBar/MapButton" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="BottomBar/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="effects_applied" from="Managers/EventManager" to="." method="_on_effects_applied"]
+[connection signal="event_ready" from="Managers/EventManager" to="." method="_on_event_ready"]

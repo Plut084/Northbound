@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bfh4syqtavudi"]
+
+[ext_resource type="Script" uid="uid://ctamq13u53p7w" path="res://scripts/event_panel.gd" id="1_event_panel"]
+[ext_resource type="Texture2D" uid="uid://cufpjm1knbfvk" path="res://ui/ui_framework.png" id="2_c0j7j"]
+[ext_resource type="Texture2D" uid="uid://bfk2pjrrru16s" path="res://ui/ui_title.png" id="3_afoau"]
+
+[node name="EventPanel" type="Control" unique_id=2049762503]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_event_panel")
+
+[node name="UiFramework" type="Sprite2D" parent="." unique_id=1047346650]
+position = Vector2(998.00006, 449)
+scale = Vector2(1.5107272, 1.6695429)
+texture = ExtResource("2_c0j7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1309101903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -326.0
+offset_right = 216.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="UiTitle" type="Sprite2D" parent="VBoxContainer" unique_id=1078602080]
+position = Vector2(205.99998, 23.999996)
+scale = Vector2(0.6096731, 0.5903498)
+texture = ExtResource("3_afoau")
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1102902499]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=806035357]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=170873510]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=545429675]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer" unique_id=809691151]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1077679415]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+text = "继续"
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

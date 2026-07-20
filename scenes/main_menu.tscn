@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c7k8nan0p1q2r"]
+
+[ext_resource type="Script" uid="uid://bwskmd0t26sse" path="res://scripts/main_menu.gd" id="1_main_menu"]
+[ext_resource type="Texture2D" uid="uid://dgom41s8uqkqx" path="res://asserts/background_startmenu.png" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://dkrlhu54ac55e" path="res://scenes/settings_panel.tscn" id="2_settings"]
+
+[node name="MainMenu" type="Control" unique_id=792104396]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main_menu")
+
+[node name="BackgroundSecondday" type="Sprite2D" parent="." unique_id=750271280]
+position = Vector2(963.9999, 560.99994)
+scale = Vector2(1.6961803, 1.7839507)
+texture = ExtResource("2_bqqt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=599768526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=551970306]
+layout_mode = 2
+theme_override_font_sizes/font_size = 58
+text = "北 行"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer" unique_id=183372512]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "一路向北，别无归途。"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=119678705]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1125027004]
+layout_mode = 2
+text = "开始游戏"
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=999244411]
+layout_mode = 2
+text = "继续游戏"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1437386359]
+layout_mode = 2
+text = "设置"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1018869801]
+layout_mode = 2
+text = "退出"
+
+[node name="SettingsPanel" parent="." unique_id=38854382 instance=ExtResource("2_settings")]
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://emx1roqi4iwe"]
+
+[ext_resource type="AudioStream" uid="uid://x4cnqfhepnfy" path="res://audio/bgm/ambient-nordic-game-soundtracka-quiet_070526.ogg" id="1_ab2wy"]
+[ext_resource type="Script" uid="uid://c6bin7w26e7q5" path="res://scripts/audio_manager.gd" id="2_j54ry"]
+
+[node name="Audiomanager" type="Node" unique_id=1318157680]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1762763204]
+stream = ExtResource("1_ab2wy")
+volume_db = -5.0
+script = ExtResource("2_j54ry")

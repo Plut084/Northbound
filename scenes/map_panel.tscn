@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bf2gxwydlj1v3"]
+
+[ext_resource type="Script" uid="uid://dtp30lqc3nipw" path="res://scripts/map_panel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ghs68meh8gfs" path="res://asserts/icon_close.png" id="2_23bvh"]
+[ext_resource type="Texture2D" uid="uid://cufpjm1knbfvk" path="res://ui/ui_framework.png" id="2_pvh3j"]
+[ext_resource type="Texture2D" uid="uid://bfk2pjrrru16s" path="res://ui/ui_title.png" id="3_sgckr"]
+
+[node name="MapPanel" type="Control" unique_id=1082227037]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_script")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=308585062]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="Panel" parent="." unique_id=469173466]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -220.0
+offset_right = 300.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UiFramework" type="Sprite2D" parent="Panel" unique_id=1234390141]
+position = Vector2(296.99997, 204.00003)
+scale = Vector2(0.8544776, 1.2238806)
+texture = ExtResource("2_pvh3j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1844596187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="TabRow" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=446935580]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="UiTitle" type="Sprite2D" parent="Panel/VBoxContainer/TabRow" unique_id=1783380657]
+position = Vector2(312, 13.999999)
+scale = Vector2(0.94277936, 0.50777197)
+texture = ExtResource("3_sgckr")
+
+[node name="ActiveTabButton" type="Button" parent="Panel/VBoxContainer/TabRow" unique_id=1936933497]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "派遣中任务"
+flat = true
+
+[node name="AvailableTabButton" type="Button" parent="Panel/VBoxContainer/TabRow" unique_id=1144589680]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "可派遣任务"
+flat = true
+
+[node name="CompletedTabButton" type="Button" parent="Panel/VBoxContainer/TabRow" unique_id=431865047]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "任务完成记录"
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=585472156]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1992019049]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer" unique_id=2056579473]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer" unique_id=2024981712]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer" unique_id=1847445407]
+layout_mode = 2
+text = "关闭"
+
+[node name="IconClose" type="Sprite2D" parent="Panel/VBoxContainer" unique_id=824546482]
+position = Vector2(252.75002, 420.25)
+scale = Vector2(0.3650004, 0.37500018)
+texture = ExtResource("2_23bvh")
+
+[connection signal="pressed" from="Panel/VBoxContainer/TabRow/ActiveTabButton" to="." method="_on_active_tab_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/TabRow/AvailableTabButton" to="." method="_on_available_tab_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/TabRow/CompletedTabButton" to="." method="_on_completed_tab_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_pressed"]

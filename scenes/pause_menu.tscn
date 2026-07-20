@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://mnniw455e47c"]
+
+[ext_resource type="Script" uid="uid://cnrt5kn885c6u" path="res://scripts/pause_menu.gd" id="1_pause_menu"]
+
+[node name="PauseMenu" type="Control" unique_id=1185871594]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_pause_menu")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1455219827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.6)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1780631341]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -120.0
+offset_right = 100.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1297733664]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "暂停"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1225557636]
+layout_mode = 2
+text = "继续游戏"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer" unique_id=669775300]
+layout_mode = 2
+text = "保存游戏"
+
+[node name="LoadButton" type="Button" parent="VBoxContainer" unique_id=1242767268]
+layout_mode = 2
+text = "加载游戏"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2007056018]
+layout_mode = 2
+text = "返回主菜单"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/SaveButton" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadButton" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]

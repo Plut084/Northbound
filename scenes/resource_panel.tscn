@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://d1r2e3s4o5u6r"]
+
+[ext_resource type="Script" uid="uid://cepfa4jb61cwf" path="res://scripts/resource_panel.gd" id="1_resource_panel"]
+[ext_resource type="Texture2D" uid="uid://ugotek6m46ld" path="res://asserts/icon_food.png" id="2_food_icon"]
+[ext_resource type="Texture2D" uid="uid://btg8dyarmd2lv" path="res://asserts/icon_fire.png" id="3_fire_icon"]
+[ext_resource type="Texture2D" uid="uid://dhklqqd0jdlnj" path="res://asserts/icon_morale.png" id="4_morale_icon"]
+[ext_resource type="Texture2D" uid="uid://bep03a4fpisxc" path="res://asserts/icon_population.png" id="5_mdpgc"]
+
+[node name="ResourcePanel" type="HBoxContainer" unique_id=1764821787]
+offset_right = 276.0
+offset_bottom = 23.0
+alignment = 2
+script = ExtResource("1_resource_panel")
+
+[node name="food" type="HBoxContainer" parent="." unique_id=1919966314]
+layout_mode = 2
+
+[node name="foodtexture" type="TextureRect" parent="food" unique_id=327665238]
+layout_mode = 2
+texture = ExtResource("2_food_icon")
+expand_mode = 2
+
+[node name="FoodLabel" type="Label" parent="food" unique_id=2070631338]
+unique_name_in_owner = true
+layout_mode = 2
+text = "食物 20"
+horizontal_alignment = 1
+
+[node name="fire" type="HBoxContainer" parent="." unique_id=1920500376]
+layout_mode = 2
+
+[node name="firetexture" type="TextureRect" parent="fire" unique_id=1222671939]
+layout_mode = 2
+texture = ExtResource("3_fire_icon")
+expand_mode = 2
+
+[node name="FireLabel" type="Label" parent="fire" unique_id=2043315190]
+unique_name_in_owner = true
+layout_mode = 2
+text = "火种 20"
+horizontal_alignment = 1
+
+[node name="morale" type="HBoxContainer" parent="." unique_id=474258296]
+layout_mode = 2
+
+[node name="moraletexture" type="TextureRect" parent="morale" unique_id=170225978]
+layout_mode = 2
+texture = ExtResource("4_morale_icon")
+expand_mode = 2
+
+[node name="MoraleLabel" type="Label" parent="morale" unique_id=1927277678]
+unique_name_in_owner = true
+layout_mode = 2
+text = "士气 20"
+horizontal_alignment = 1
+
+[node name="people" type="HBoxContainer" parent="." unique_id=841242292]
+layout_mode = 2
+
+[node name="peopletexuture" type="TextureRect" parent="people" unique_id=1007755248]
+layout_mode = 2
+texture = ExtResource("5_mdpgc")
+expand_mode = 2
+
+[node name="PeopleLabel" type="Label" parent="people" unique_id=1695254199]
+unique_name_in_owner = true
+layout_mode = 2
+text = "人数 6"
+horizontal_alignment = 1
