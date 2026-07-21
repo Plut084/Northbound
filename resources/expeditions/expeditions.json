@@ -1,0 +1,37 @@
+[
+  {
+	"id": "cracked_valley",
+	"location": "裂缝山谷",
+	"required_people": 3,
+	"description": "捕猎雪兔（食物+6）",
+	"effects": { "food": 6 }
+  },
+  {
+	"id": "ruined_library",
+	"location": "摇摇欲坠的废旧图书馆",
+	"required_people": 4,
+	"description": "搜集残破书籍（火种+5）",
+	"effects": { "fire": 5 }
+  },
+  {
+	"id": "frozen_river",
+	"location": "冰封的河床",
+	"required_people": 2,
+	"description": "凿冰捕鱼（食物+3）",
+	"effects": { "food": 3 }
+  },
+  {
+	"id": "old_workshop",
+	"location": "废弃工坊",
+	"required_people": 3,
+	"description": "搜寻工具和燃料（火种+4）",
+	"effects": { "fire": 4 }
+  },
+  {
+	"id": "berry_thicket",
+	"location": "冻原莓丛",
+	"required_people": 2,
+	"description": "采集冻莓（食物+2）",
+	"effects": { "food": 2 }
+  }
+]

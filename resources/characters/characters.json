@@ -1,0 +1,80 @@
+[
+  {
+	"id": "xiaoming",
+	"name": "小明",
+	"age": 26,
+	"hp": 3,
+	"max_hp": 3,
+	"background": "以前是教师。",
+	"trait": {
+	  "type": "expedition_bonus",
+	  "value": 0.2,
+	  "description": "小明在派遣队伍中时，收获资源数量增加百分之二十（可与士气对资源收获的加成叠加）。"
+	}
+  },
+  {
+	"id": "xiaohong",
+	"name": "小红",
+	"age": 30,
+	"hp": 3,
+	"max_hp": 3,
+	"background": "沉默的木匠。",
+	"trait": {
+	  "type": "fire_cost_reduce",
+	  "value": 1,
+	  "description": "小红在当前队伍时（派遣中除外），由事件引起「火种」消耗时，消耗数量减一。"
+	}
+  },
+  {
+	"id": "laowang",
+	"name": "老王",
+	"age": 52,
+	"hp": 2,
+	"max_hp": 2,
+	"background": "退休的护林员，认得大部分野外的痕迹。",
+	"trait": {
+	  "type": "food_scavenge_bonus",
+	  "value": 0.3,
+	  "description": "老王在派遣队伍中时，食物收获数量增加百分之三十。"
+	}
+  },
+  {
+	"id": "ali",
+	"name": "阿丽",
+	"age": 22,
+	"hp": 3,
+	"max_hp": 3,
+	"background": "护士学校的学生，还差一年毕业。",
+	"trait": {
+	  "type": "heal_bonus",
+	  "value": 1,
+	  "description": "阿丽在队伍中时，任何治疗效果的回复量增加 1 点。"
+	}
+  },
+  {
+	"id": "dagang",
+	"name": "大刚",
+	"age": 35,
+	"hp": 4,
+	"max_hp": 4,
+	"background": "曾在北方边境服役。",
+	"trait": {
+	  "type": "cold_resist",
+	  "value": 1,
+	  "description": "大刚在队伍中时（派遣中除外），由事件引起「生命值」损失时，损失减一。"
+	}
+  },
+  {
+	"id": "xiaoqiu",
+	"name": "小秋",
+	"age": 19,
+	"hp": 2,
+	"max_hp": 2,
+	"background": "沉默寡言的少年，背包里塞满了书。",
+	"trait": {
+	  "type": "fire_cost_reduce",
+	  "value": 1,
+	  "description": "小秋在队伍中时（派遣中除外），因事件导致「火种」消耗时，消耗数量减一。"
+	}
+  }
+]
